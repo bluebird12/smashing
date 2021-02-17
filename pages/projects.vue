@@ -1,73 +1,52 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        projects fuck!
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <main>
+      <h1>Projects</h1>
+      <div v-for="project in githubProjects" :key="project.id">
+        <h3><a :href="project.html_url">{{ project.name }}</a></h3>
       </div>
-    </div>
-  </div>
+  </main>
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+
+export default {
+  computed: {
+    ...mapState(["githubProjects"])
+  },
+  mounted() {
+    this.$store.dispatch("getGithubProjects");
+  }
+}
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+main {
+  width: 80vw;
+  margin: 2% 8%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 50px;
+  grid-row-gap: 0px;
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+aside {
+  grid-area: 1 / 2 / 2 / 3;
 }
-
-.links {
-  padding-top: 15px;
+section {
+  grid-area: 1 / 1 / 2 / 2;
+  background: white;
+  color: black;
+  padding: 30px;
+}
+  a {
+  color: black;
+}
+.stars {
+  color: orangered;
+}
+.project {
+  margin-bottom: 30px;
 }
 </style>

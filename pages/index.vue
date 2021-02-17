@@ -1,73 +1,43 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        smashing fuck
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <main>
+    <div class="background">
+      <app-masthead/>
     </div>
-  </div>
+    <div class="headings">
+          <h1 class="title">
+      smashing fuck
+    </h1>
+    <div v-for=""></div>
+    <p>Pleas eat</p>
+    </div>
+    <div class="links"><p>Got follow Maller</p></div>
+    <div class="nextpage">Projects</div>
+    
+  </main>
 </template>
 
 <script>
-export default {}
+import AppMasthead from'~/components/AppMasthead.vue'
+
+export default {
+  components: {
+    AppMasthead
+  }
+}
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+main { 
+  width: 100vw;
+  height: calc(100vh - 100px);
+  display: grid; 
+  grid-template-columns: 100px repeat(4, 1fr); 
+  grid-template-rows: repeat(3, 1fr) 50px 100px; 
+  grid-column-gap: 0px;
+  grid-row-gap: 0px; 
 }
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+.background { grid-area: 1 / 3 / 5 / 6; } 
+.headings { grid-area: 2 / 2 / 3 / 6; } 
+.links { grid-area: 5 / 1 / 6 / 5; padding: 30px;} 
+.nextpage { grid-area: 4 / 5 / 6 / 6; background: #eee; color: black; padding: 30px } 
 </style>

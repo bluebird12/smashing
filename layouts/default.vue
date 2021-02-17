@@ -1,13 +1,23 @@
 <template>
   <div>
+    <app-nav/>
     <Nuxt />
   </div>
 </template>
 
+<script>
+import AppNav from '~/components/AppNav.vue'
+export default {
+  components: {
+    AppNav
+  }
+}
+</script>
+
 <style>
 html {
   font-family:
-    'Source Sans Pro',
+    'Roboto',
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
@@ -15,13 +25,53 @@ html {
     'Helvetica Neue',
     Arial,
     sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background: #0b0d17;
+  color: #eee;
+}
+h1 {
+    font-family:
+    'Alfa Slab One',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+    font-weight: normal;
+    font-size: 45px;
+    color: white;
+}
+h2 {
+    font-family:
+    'Alfa Slab One',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+    font-weight: normal;
+}
+h3 {
+    font-family:
+    'Alfa Slab One',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+    font-weight: normal;
 }
 
 *,
