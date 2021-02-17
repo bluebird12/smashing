@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 main {
   width: 80vw;
   margin: 2% 8%;

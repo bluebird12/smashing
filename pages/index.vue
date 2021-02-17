@@ -36,20 +36,20 @@ main {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
-  .background {
+main .background {
     grid-area: 1 / 3 / 5 / 6;
   }
-  .headings {
-    grid-area: 2 / 2 / 3 / 6;
-  }
-  .links {
-    grid-area: 5 / 1 / 6 / 5;
-    padding: 30px;
-  }
-  .nextpage {
-    background: #eee;
-    color: black;
-    padding: 30px;
-    grid-area: 4 / 5 / 6 / 6;
-  }
+main .headings {
+  grid-area: 2 / 2 / 3 / 6;
+}
+main .links {
+  grid-area: 5 / 1 / 6 / 5;
+  padding: 30px;
+}
+main .nextpage {
+  background: #eee;
+  color: black;
+  padding: 30px;
+  grid-area: 4 / 5 / 6 / 6;
+}
 </style>
